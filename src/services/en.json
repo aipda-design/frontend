@@ -1,0 +1,97 @@
+{
+	"world": {
+		"title": "Strengthening the Presence of Design in Africa",
+		"subtitle": "You are a key player in the design world. You are drawn to African aesthetics and the challenges of development in Africa.",
+		"underSubTitle": "Join the AIPDA representation in your region.",
+		"bgColor": "monde-gris",
+		"textColor": "monde-noir",
+		"button": {
+			"africa": {
+				"title": "AIPDA AFRICA",
+				"buttonContent": "Join an African representation.",
+				"bgColor": "afrique-Vert-fonce",
+				"textColor": "afrique-vert-blanc",
+				"insideColor": "afrique-Vert-clair"
+			},
+			"europe": {
+				"title": "AIPDA EUROPE",
+				"buttonContent": "Join a European representation.",
+				"bgColor": "europe-bleu-fonce",
+				"textColor": "europe-blanc",
+				"insideColor": "europe-bleu-clair"
+			},
+			"amerique": {
+				"title": "AIPDA AMERICA",
+				"buttonContent": "Join an American representation.",
+				"bgColor": "",
+				"textColor": "",
+				"insideColor": ""
+			},
+			"asie": {
+				"title": "AIPDA ASIA",
+				"buttonContent": "Join an Asian representation.",
+				"bgColor": "",
+				"textColor": "",
+				"insideColor": ""
+			}
+		}
+	},
+	"Continents": {
+		"afrique": {
+			"lang": "en",
+			"name": "Africa",
+			"title": "In Africa, AIPDA supports design stakeholders.",
+			"countries": {
+				"cameroun": "Cameroon",
+				"congo_B": "Congo Brazzaville",
+				"ivory_cost": "Ivory Coast",
+				"mali": "Mali"
+			},
+			"infos": {
+				"infos_title": "Would you like to join a representation?",
+				"infos_sub_title": "Follow these registration steps:",
+				"liste": {
+					"arg_1": "Browse the list of AIPDA countries",
+					"arg_2": "Select your country",
+					"arg_3": "Fill out the registration form",
+					"arg_4": "Click 'Submit' to confirm your registration"
+				}
+			},
+			"bgHeader": "afrique-vert-blanc",
+			"bgColor": "afrique-Vert-fonce",
+			"textColor": "afrique-vert-blanc",
+			"bgAccordion": "afrique-Vert-clair",
+			"default": "input-default-color"
+		},
+		"europe": {
+			"lang": "en",
+			"name": "Europe",
+			"title": "In Europe, AIPDA supports design stakeholders.",
+			"countries": {
+				"france": "France",
+				"belgique": "Belgium",
+				"espagne": "Spain",
+				"luxembourg": "Luxembourg"
+			},
+			"infos": {
+				"infos_title": "Would you like to join a representation?",
+				"infos_sub_title": "Follow these registration steps:",
+				"liste": {
+					"arg_1": "Browse the list of AIPDA countries",
+					"arg_2": "Select your country",
+					"arg_3": "Fill out the registration form",
+					"arg_4": "Click 'Submit' to confirm your registration"
+				}
+			},
+			"bgHeader": "europe-blanc",
+			"bgColor": "europe-bleu-fonce",
+			"textColor": "europe-blanc",
+			"bgAccordion": "europe-bleu-clair",
+			"default": "default-color"
+		}
+	},
+	"end": {
+		"title": "Thank you for registering",
+		"copyright": "International Alliance for the Promotion of Design in Africa © All rights reserved 2024"
+	}
+}
