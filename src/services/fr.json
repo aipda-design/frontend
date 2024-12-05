@@ -1,0 +1,97 @@
+{
+	"world": {
+		"title": "Renforcer la présence du design en Afrique",
+		"subtitle": "Vous êtes un acteur du design dans le monde. Vous êtes sensible à l'esthétique africaine ainsi qu’aux enjeux du développement en Afrique. ",
+		"underSubTitle": "Rejoignez la représentation AIPDA de votre territoire.",
+		"bgColor": "monde-gris",
+		"textColor": "monde-noir",
+		"button": {
+			"africa": {
+				"title": "aipda aFRIQUE",
+				"buttonContent": "Rejoindre une représentation africaine.",
+				"bgColor": "afrique-Vert-fonce",
+				"textColor": "afrique-vert-blanc",
+				"insideColor": "afrique-Vert-clair"
+			},
+			"europe": {
+				"title": "aipda EUROPE",
+				"buttonContent": "Rejoindre une représentation européenne.",
+				"bgColor": "europe-bleu-fonce",
+				"textColor": "europe-blanc",
+				"insideColor": "europe-bleu-clair"
+			},
+			"amerique": {
+				"title": "aipda AMERIQUE",
+				"buttonContent": "Rejoindre une représentation américaine.",
+				"bgColor": "",
+				"textColor": "",
+				"insideColor": ""
+			},
+			"asie": {
+				"title": "aipda ASIE",
+				"buttonContent": "Rejoindre une représentation asiatique.",
+				"bgColor": "",
+				"textColor": "",
+				"insideColor": ""
+			}
+		}
+	},
+	"Continents": {
+		"afrique": {
+			"lang": "fr",
+			"name": "Afrique",
+			"title": "En Afrique,l’AIPDA soutien les acteurs du design.",
+			"countries": {
+				"cameroun": "Cameroun",
+				"congo_B": "Congo Brazza",
+				"ivory_cost": "Côte d’Ivoire",
+				"mali": "Mali"
+			},
+			"infos": {
+				"infos_title": "Vous souhaitez rejoindre une représentation ?",
+				"infos_sub_title": "Suivez les étapes d’inscription :",
+				"liste": {
+					"arg_1": "Parcourez la liste des pays AIPDA",
+					"arg_2": "Sélectionnez votre pays",
+					"arg_3": "Remplissez le formulaire d’inscription",
+					"arg_4": "Cliquez sur ”Envoyer” pour valider l’inscription"
+				}
+			},
+			"bgHeader": "afrique-vert-blanc",
+			"bgColor": "afrique-Vert-fonce",
+			"textColor": "afrique-vert-blanc",
+			"bgAccordion": "afrique-Vert-clair",
+			"default": "input-default-color"
+		},
+		"europe": {
+			"lang": "fr",
+			"name": "Europe",
+			"title": "En Europe, l’AIPDA soutient les acteurs du design.",
+			"countries": {
+				"france": "France",
+				"belgique": "Belgique",
+				"espagne": "Espagne",
+				"luxembourg": "Luxembourg"
+			},
+			"infos": {
+				"infos_title": "Vous souhaitez rejoindre une représentation ?",
+				"infos_sub_title": "Suivez les étapes d’inscription :",
+				"liste": {
+					"arg_1": "Parcourez la liste des pays AIPDA",
+					"arg_2": "Sélectionnez votre pays",
+					"arg_3": "Remplissez le formulaire d’inscription",
+					"arg_4": "Cliquez sur ”Envoyer” pour valider l’inscription"
+				}
+			},
+			"bgHeader": "europe-blanc",
+			"bgColor": "europe-bleu-fonce",
+			"textColor": "europe-blanc",
+			"bgAccordion": "europe-bleu-clair",
+			"default": "default-color"
+		}
+	},
+	"end": {
+		"title": "Merci pour votre l'inscription",
+		"copyright": "Alliance Internationale pour la Promotion du Design en Afrique © Tous droits réservés 2024"
+	}
+}
