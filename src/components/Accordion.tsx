@@ -97,7 +97,7 @@ const Accordion: React.FC<AccordionProps> = ({
                     aria-controls={`accordion-content-${title}`}
                 >
 					<span
-                        className={` text-[32px] md:text-[25px] text-${textColor} lg:text-[40px] 3xl:text-[50px] 3xl:p-2`}
+                        className={` text-[25px] md:text-[32px] text-${textColor} lg:text-[40px] 3xl:text-[50px] 3xl:p-2`}
                     >
 						{title}
 					</span>
