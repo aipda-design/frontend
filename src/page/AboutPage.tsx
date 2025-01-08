@@ -2,11 +2,13 @@ import signature from "../assets/signature.svg"
 
 const AboutPage = () => {
     return (
-        <div className="p-4">
-            <div>
+        <div className="p-4 lg:grid grid-cols-2">
+            <div className={"lg:ml-[83px] lg:mb-[90px]"}>
                 <h2 className={"text-[#AEC1FF] font-bold mb-6"}>MANIFESTE AIPDA</h2>
                 <div>
-                    <p className="text-[#AEC1FFBF]">Le monde entier assiste à un changement de paradigme politique,
+                    <p className="text-[#AEC1FFBF]">
+                        <span>
+                            Le monde entier assiste à un changement de paradigme politique,
                         culturel, économique, social et
                         environnemental. L'Afrique, quant à elle, émerge et prend conscience de ses atouts grâce à sa
                         jeunesse dynamique, sa diaspora et ses citoyens engagés. Toutes les indications convergent pour
@@ -17,7 +19,8 @@ const AboutPage = () => {
                         Pour l'institution financière internationale, cela implique la mise en place d'un écosystème
                         favorable à la création, à la stabilité et à la croissance des entreprises, ainsi que le
                         développement de compétences en phase avec les besoins du marché.
-
+                        </span>
+                        <span className={"lg:block lg:mt-7"}>
                         Parallèlement, le design prend de plus en plus d'importance en tant qu'outil essentiel de
                         réflexion stratégique. Non pas parce que la réflexion stratégique est impossible sans le design,
                         mais parce qu'en l'intégrant, elle cherche à considérer de manière holistique l'ensemble des
@@ -28,17 +31,18 @@ const AboutPage = () => {
                         sur chaque territoire en Afrique subsaharienne ? En d'autres termes, ne serait-il pas nécessaire
                         d'anticiper et d'utiliser le design comme un catalyseur pour favoriser un environnement propice
                         à la création, à la stabilité et à la croissance des entreprises ?
-
+                        </span>
+                        <span className={"lg:block lg:mt-7"}>
                         Face à ces interrogations, nous avons jugé pertinent de fonder une organisation de design
                         d'utilité publique qui aborderait chaque aspect de la problématique de manière approfondie, afin
-                        d’y apporter des solutions.
+                        d’y apporter des solutions.</span>
                     </p>
                 </div>
             </div>
-            <div className="text-[#AEC1FF] mt-3">
+            <div className="text-[#AEC1FF] mt-3 lg:flex flex-col justify-end items-end lg:mr-[83px] lg:mb-[90px]">
                 <h2 className={"font-bold"}>Elie KOUAME</h2>
-                <span className="mb-8">Président et Coordinateur général</span>
-                <img src={signature} alt=""/>
+                <span className="mb-8 block">Président et Coordinateur général</span>
+                <img src={signature} alt="signature" className="w-[155px]"/>
             </div>
         </div>
     );

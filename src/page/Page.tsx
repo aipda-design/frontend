@@ -9,10 +9,8 @@ export default function Page() {
                 className="bg-monde-bleu-fonce min-h-[calc(100vh-16px)] 2xl:h-[calc(100vh-36px)] flex flex-col items-center rounded-[28px]  m-2 w-full
 			"
             >
-                <div className="hidden">
-                    <NavList/>
-                </div>
 
+                <NavList/>
                 <>
                     <Outlet/>
                 </>
