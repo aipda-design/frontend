@@ -98,11 +98,11 @@ const ContinentNotYet = () => {
                 <Logo/>
             </div>
 
-            <div className="relative w-auto my-6 mx-auto max-w-3xl">
+            <div className="relative">
                 {/*content*/}
                 <form
                     onSubmit={handleSubmitForm}
-                    className="max-w-sm mx-auto border-0 rounded-lg shadow-lg relative flex flex-col  bg-europe-blanc text-blueGray-200 outline-none focus:outline-none w-[98%]"
+                    className="mx-auto border-0 rounded-lg shadow-lg relative flex flex-col  bg-europe-blanc text-blueGray-200 outline-none focus:outline-none w-full md:w-[50vw]"
                 >
                     {/*header*/}
                     <div

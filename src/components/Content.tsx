@@ -40,7 +40,7 @@ const Content = () => {
     return (
         <>
             <div
-                className={`bg-${datas?.bgHeader} min-h-screen flex items-center justify-center w-full overflow-hidden`}
+                className={`bg-${datas?.bgHeader} min-h-screen flex items-center justify-center w-full overflow-hidden z-50`}
             >
                 <div
                     className="rounded-2xl lg:rounded-[28px] m-2 md:m-4 h-[calc(100vh - 16px)] lg:h-[calc(100vh-36px)]  w-full overflow-hidden">

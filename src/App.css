@@ -1,18 +1,25 @@
 #root {
-	width: 100%;
-	margin: 0 auto;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	min-height: 100vh; /* Hauteur minimale pour remplir l'écran */
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Hauteur minimale pour remplir l'écran */
 }
 
 @media (max-width: 768px) {
-	#root {
-	}
+    #root {
+    }
 }
+
 @media (max-width: 480px) {
-	#root {
-	}
+    #root {
+    }
+}
+
+.toast {
+    background-color: #AEC1FF1C;
+    border-radius: 1rem /* 16px */;
+    padding: 1rem /* 16px */;
 }

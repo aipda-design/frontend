@@ -5,8 +5,12 @@ export default {
     content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
     theme: {
         extend: {
+            height: {
+                'fill': '-webkit-fill-available',
+            },
             width: {
-                inherit: "inherit"
+                inherit: "inherit",
+                'fill': '-webkit-fill-available',
             },
             screens: {
                 "3xl": "2000px",
