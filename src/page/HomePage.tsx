@@ -1,6 +1,9 @@
 import Logo from "../components/Logo";
 import Box from "../components/Box";
 import {Link} from "react-router-dom";
+import {useEffect} from "react";
+import {showCustomToastPrincipal} from "../components/toastNotifications";
+import {ToastContainer} from "react-toastify";
 
 const data = [
     {
@@ -50,6 +53,16 @@ const smallInfos = [{
 }]
 
 const HomePage = () => {
+
+
+    useEffect(() => {
+        // Afficher la notification 5 secondes après que la page se charge
+
+        showCustomToastPrincipal();
+
+    }, []);
+
+
     return (
         <div
             className="flex flex-col items-center gap-8  3xl:gap-[80px] p-4 2xl:p-8 2xl:h-[calc(100vh-36px)]  w-full max-w-[1206px] mx-auto">
@@ -114,6 +127,8 @@ const HomePage = () => {
 							Enregistrez-vous ici
 						</span>
             </Link>
+            <ToastContainer/>
+
         </div>
 
     );

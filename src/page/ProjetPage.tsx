@@ -1,3 +1,9 @@
+import {ToastContainer} from "react-toastify";
+import CloseButtonToast from "../components/CloseButtonToast";
+import {useEffect} from "react";
+import {useNavigate} from "react-router-dom";
+import {showCustomToastProjet} from "../components/toastNotifications";
+
 const tableCourtTerme = [
     {
         title: "Djembé",
@@ -38,6 +44,18 @@ const tableLongTerme = [
 
 
 const ProjetPage = () => {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        // Afficher la notification 5 secondes après que la page se charge
+        const timer = setTimeout(() => {
+            showCustomToastProjet(navigate);
+        }, 5000);
+
+        // Nettoyage du timer à la suppression du composant
+        return () => clearTimeout(timer);
+    }, [navigate]);
+
     return (
         <div className={"text-[#AEC1FFBF] mt-[67px] p-4 lg:flex lg:w-inherit lg:pl-24 lg:pr-24"}>
             <div>
@@ -83,20 +101,7 @@ const ProjetPage = () => {
                 </div>
 
             </div>
-            <div className={"lg:flex justify-end items-end ml-20"}>
-                <div className={"bg-[#AEC1FF1C] rounded-2xl"}>
-                    <div className={"p-4 "}>
-                        <p className={"text-xs font-bold"}>SOUTENIR UN PROJET</p>
-                        <span className={"text-[17px] block mb-4"}>Vous souhaitez soutenir un projet ?</span>
-
-                        <button
-                            className={"bg-[#AEC1FF] text-[#000827] w-full rounded-lg p-2 hover:bg-[#000827] hover:text-[#AEC1FF]"}>
-                            <span>Ecrivez-nous ici</span>
-                        </button>
-
-                    </div>
-                </div>
-            </div>
+            <ToastContainer closeButton={CloseButtonToast}/>
         </div>
 
     );

@@ -1,3 +1,9 @@
+import {useNavigate} from "react-router-dom";
+import {ToastContainer} from "react-toastify";
+import CloseButtonToast from "../components/CloseButtonToast";
+import {useEffect} from "react";
+import {showCustomToast} from "../components/toastNotifications";
+
 const table = [
     {
         title: "Diffuser le Design",
@@ -22,17 +28,29 @@ const table = [
 ]
 
 const MissionPage = () => {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        // Afficher la notification 5 secondes après que la page se charge
+        const timer = setTimeout(() => {
+            showCustomToast(navigate);
+        }, 5000);
+
+        // Nettoyage du timer à la suppression du composant
+        return () => clearTimeout(timer);
+    }, [navigate]);
+
     return (
-        <div className="p-4 lg:w-inherit lg:p-24">
-            <div className="text-[#AEC1FF] ">
-                <h2 className="font-bold text-xs">MISSION PRINCIPALE</h2>
+        <div className="p-4 lg:w-inherit lg:p-8 text-[#AEC1FF] ">
+            <div className="">
+                <h2 className="font-bold text-xs tracking-wider ">MISSION PRINCIPALE</h2>
                 <div className="mt-6  mb-6 max-w-[667px] lg:mb-[68px]">
                     <span className="text-[32px] ">
                         Renforcer la présence du Design en Afrique, dans les territoires afrodescendants tout en
                         soutenant les acteurs.
                     </span>
                 </div>
-                <h2 className="font-bold  ">AXES DE DEVELOPPEMENT</h2>
+                <h2 className="font-bold text-xs tracking-wider ">AXES DE DEVELOPPEMENT</h2>
                 <div className="mt-6 lg:mt-0 lg:flex flex-wrap gap-8">
                     {/*Crée un tableau avec les infos */}
                     {table.map((item, index) => (
@@ -47,6 +65,7 @@ const MissionPage = () => {
 
                 </div>
             </div>
+            <ToastContainer closeButton={CloseButtonToast}/>
         </div>
     );
 };

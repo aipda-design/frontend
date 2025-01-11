@@ -1,12 +1,30 @@
-import signature from "../assets/signature.svg"
+import {useNavigate} from "react-router-dom";
+import {useEffect} from "react";
+import {ToastContainer} from "react-toastify";
+import CloseButtonToast from "../components/CloseButtonToast";
+import {showCustomToast} from "../components/toastNotifications";
+
 
 const AboutPage = () => {
+
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        // Afficher la notification 5 secondes après que la page se charge
+        const timer = setTimeout(() => {
+            showCustomToast(navigate);
+        }, 5000);
+
+        // Nettoyage du timer à la suppression du composant
+        return () => clearTimeout(timer);
+    }, [navigate]);
+
     return (
         <div className="p-4 lg:grid grid-cols-2">
             <div className={"lg:ml-[83px] lg:mb-[90px]"}>
-                <h2 className={"text-[#AEC1FF] font-bold mb-6"}>MANIFESTE AIPDA</h2>
-                <div>
-                    <p className="text-[#AEC1FFBF]">
+                <h2 className={"text-[#AEC1FF] font-bold mb-6 tracking-wider"}>MANIFESTE AIPDA</h2>
+                <div className="max-h-[592px] overflow-scroll">
+                    <p className="text-[#AEC1FFBF] ">
                         <span>
                             Le monde entier assiste à un changement de paradigme politique,
                         culturel, économique, social et
@@ -37,13 +55,34 @@ const AboutPage = () => {
                         d'utilité publique qui aborderait chaque aspect de la problématique de manière approfondie, afin
                         d’y apporter des solutions.</span>
                     </p>
+
+                </div>
+                <div className={"mt-4 text-[#AEC1FF]  "}>
+                    <h2 className={"font-bold"}>Elie KOUAME</h2>
+                    <span className="mb-8 block">Président et Coordinateur général</span>
+                </div>
+
+            </div>
+            {/*<div className="mt-3 lg:flex flex-col justify-end items-end lg:mr-[83px] lg:mb-[90px] text-[#AEC1FFBF] ">
+                <div className={"bg-[#AEC1FF1C] rounded-2xl"}>
+                    <div className={"p-4 "}>
+                        <p className={"text-xs font-bold"}>S'ENGAGER AVEC L'AIPDIA </p>
+                        <span className={"text-[17px] block mb-4"}>Vous souhaitez rejoindre une représentation ?</span>
+
+                        <button
+                            onClick={() => navigate('/')}
+                            className={"bg-[#AEC1FF] text-[#000827] w-full rounded-lg p-2 hover:bg-[#000827] hover:text-[#AEC1FF]"}>
+                            <span>Enregistrez-vous ici</span>
+                        </button>
+
+                    </div>
                 </div>
             </div>
-            <div className="text-[#AEC1FF] mt-3 lg:flex flex-col justify-end items-end lg:mr-[83px] lg:mb-[90px]">
-                <h2 className={"font-bold"}>Elie KOUAME</h2>
-                <span className="mb-8 block">Président et Coordinateur général</span>
-                <img src={signature} alt="signature" className="w-[155px]"/>
-            </div>
+            */}
+
+            <ToastContainer closeButton={CloseButtonToast}/>
+
+
         </div>
     );
 };
