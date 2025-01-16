@@ -1,8 +1,9 @@
 import {ToastContainer} from "react-toastify";
 import CloseButtonToast from "../components/CloseButtonToast";
 import {useEffect} from "react";
-import {useNavigate} from "react-router-dom";
-import {showCustomToastProjet} from "../components/toastNotifications";
+import {useLocation, useNavigate} from "react-router-dom";
+import {showCustomToastProjectPart1, showCustomToastProjetPart2} from "../components/toastNotifications";
+import {formatTile} from "../utils/formate";
 
 const tableCourtTerme = [
     {
@@ -45,64 +46,89 @@ const tableLongTerme = [
 
 const ProjetPage = () => {
     const navigate = useNavigate();
+    const url = useLocation()
+
+
+    const title = formatTile(url).toUpperCase()
+
 
     useEffect(() => {
         // Afficher la notification 5 secondes après que la page se charge
         const timer = setTimeout(() => {
-            showCustomToastProjet(navigate);
+            showCustomToastProjectPart1(navigate);
         }, 5000);
 
+
+        const timer2 = setTimeout(() => {
+            showCustomToastProjetPart2(navigate);
+        }, 7000);
+
+
         // Nettoyage du timer à la suppression du composant
-        return () => clearTimeout(timer);
+        return () => {
+            clearTimeout(timer);
+            clearTimeout(timer2);
+
+        }
     }, [navigate]);
 
     return (
-        <div className={"text-[#AEC1FFBF] mt-[67px] p-4 lg:flex lg:w-inherit lg:pl-24 lg:pr-24"}>
-            <div>
-                <div className={"md:grid grid-cols-2 gap-4 lg:flex flex-col"}>
-                    <div className={"lg:flex flex-col "}>
-                        <h2 className={"text-xs font-bold"}>A COURT TERME</h2>
-                        {/*mettre sous 3 colonnes s*/}
-                        <div className={"lg:flex gap-7 "}>
-                            {tableCourtTerme.map((item, index) => (
-                                <div key={index} className="mt-6 mb-6 ">
-                                    <div className={"mb-4"}>
-                                        <h3 className="text-2xl">{item.title}</h3>
-                                        <div className={"max-w-[319px]"}>
-                                            <span className={"text-xs font-bold"}>{item.subTitle}</span>
+        <>
+            {/*
+                Avant sans les nouvelles modifications
+                <div className={"text-[#AEC1FF] mt-[27px] p-4 lg:flex lg:w-inherit lg:pl-24 lg:pr-24"}>
+            */}
+            <div className={"text-[#AEC1FF]  p-4 lg:flex w-inherit 2xl:pl-28 2xl:pr-24"}>
+                <div>
+                    <h1 className={"font-bold text-2xl tracking-wider mb-2"}>{title}</h1>
 
+                    <div className={"md:grid grid-cols-2 gap-4 lg:flex flex-col"}>
+
+                        <div className={"lg:flex flex-col "}>
+                            <h2 className={"text-xs font-bold"}>A COURT TERME</h2>
+                            {/*mettre sous 3 colonnes s*/}
+                            <div className={"lg:flex gap-7 "}>
+                                {tableCourtTerme.map((item, index) => (
+                                    <div key={index} className="mt-6 mb-6 ">
+                                        <div className={"mb-4"}>
+                                            <h3 className="text-2xl">{item.title}</h3>
+                                            <div className={"max-w-[319px]"}>
+                                                <span className={"text-xs font-bold"}>{item.subTitle}</span>
+
+                                            </div>
                                         </div>
+                                        <span className="block w-[306px] max-h-[179px]">{item.details}</span>
                                     </div>
-                                    <span className="block w-[306px] max-h-[179px]">{item.details}</span>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
-                    </div>
 
-                    <div className={"lg:flex flex-col"}>
-                        <h2 className={"text-xs font-bold"}>A MOYEN ET LONG TERME</h2>
-                        {/*mettre sous 3 colonnes */}
-                        <div className={"lg:flex gap-7"}>
-                            {tableLongTerme.map((item, index) => (
-                                <div key={index} className="mt-6 mb-6 ">
-                                    <div className={"mb-4"}>
-                                        <h3 className="text-2xl">{item.title}</h3>
-                                        <div className={"max-w-[319px]"}>
-                                            <span className={"text-xs font-bold"}>{item.subTitle}</span>
+                        <div className={"lg:flex flex-col"}>
+                            <h2 className={"text-xs font-bold"}>A MOYEN ET LONG TERME</h2>
+                            {/*mettre sous 3 colonnes */}
+                            <div className={"lg:flex gap-7"}>
+                                {tableLongTerme.map((item, index) => (
+                                    <div key={index} className="mt-6 mb-6 ">
+                                        <div className={"mb-4"}>
+                                            <h3 className="text-2xl">{item.title}</h3>
+                                            <div className={"max-w-[319px]"}>
+                                                <span className={"text-xs font-bold"}>{item.subTitle}</span>
 
+                                            </div>
                                         </div>
+                                        <span className="block w-[304px] max-h-[179px]">{item.details}</span>
                                     </div>
-                                    <span className="block w-[304px] max-h-[179px]">{item.details}</span>
-                                </div>
-                            ))}
+                                ))}
+                            </div>
                         </div>
+
                     </div>
 
                 </div>
-
+                <ToastContainer closeButton={CloseButtonToast}/>
             </div>
-            <ToastContainer closeButton={CloseButtonToast}/>
-        </div>
+
+        </>
 
     );
 };

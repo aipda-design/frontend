@@ -1,9 +1,6 @@
 import Logo from "../components/Logo";
 import Box from "../components/Box";
 import {Link} from "react-router-dom";
-import {useEffect} from "react";
-import {showCustomToastPrincipal} from "../components/toastNotifications";
-import {ToastContainer} from "react-toastify";
 
 const data = [
     {
@@ -55,17 +52,9 @@ const smallInfos = [{
 const HomePage = () => {
 
 
-    useEffect(() => {
-        // Afficher la notification 5 secondes après que la page se charge
-
-        showCustomToastPrincipal();
-
-    }, []);
-
-
     return (
         <div
-            className="flex flex-col items-center gap-8  3xl:gap-[80px] p-4 2xl:p-8 2xl:h-[calc(100vh-36px)]  w-full max-w-[1206px] mx-auto">
+            className="flex flex-col items-center gap-8  3xl:gap-[80px] p-4 2xl:p-8 2xl:h-[calc(100vh-36px)]  w-full max-w-[1206px] mx-auto relative">
             <Logo/>
             <div className="flex flex-col items-center gap-4 text-[#AEC1FF]">
                 {/*avant max-w-[688px]px*/}
@@ -127,7 +116,15 @@ const HomePage = () => {
 							Enregistrez-vous ici
 						</span>
             </Link>
-            <ToastContainer/>
+            <div className="bg-[#000827] rounded-xl lg:absolute lg:bottom-0 lg:right-0">
+                <button
+                    onClick={() => {
+                    }}
+                    className="bg-[#AEC1FF40]   text-[#000827] w-full rounded-lg p-2 hover:bg-[#000827] hover:text-[#AEC1FF]"
+                >
+                    Mentions légales • CGU
+                </button>
+            </div>
 
         </div>
 

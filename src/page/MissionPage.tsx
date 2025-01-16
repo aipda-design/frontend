@@ -1,8 +1,9 @@
-import {useNavigate} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import {ToastContainer} from "react-toastify";
 import CloseButtonToast from "../components/CloseButtonToast";
 import {useEffect} from "react";
 import {showCustomToast} from "../components/toastNotifications";
+import {formatTile} from "../utils/formate";
 
 const table = [
     {
@@ -29,6 +30,10 @@ const table = [
 
 const MissionPage = () => {
     const navigate = useNavigate();
+    const url = useLocation()
+
+
+    const title = formatTile(url).toUpperCase()
 
     useEffect(() => {
         // Afficher la notification 5 secondes après que la page se charge
@@ -41,8 +46,9 @@ const MissionPage = () => {
     }, [navigate]);
 
     return (
-        <div className="p-4 lg:w-inherit lg:p-8 text-[#AEC1FF] ">
+        <div className="p-4 lg:w-inherit 2xl:pl-28 text-[#AEC1FF] ">
             <div className="">
+                <h1 className={"font-bold text-2xl tracking-wider mb-2"}>{title}</h1>
                 <h2 className="font-bold text-xs tracking-wider ">MISSION PRINCIPALE</h2>
                 <div className="mt-6  mb-6 max-w-[667px] lg:mb-[68px]">
                     <span className="text-[32px] ">

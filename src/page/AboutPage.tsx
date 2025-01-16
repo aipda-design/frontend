@@ -1,13 +1,18 @@
-import {useNavigate} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import {useEffect} from "react";
 import {ToastContainer} from "react-toastify";
 import CloseButtonToast from "../components/CloseButtonToast";
 import {showCustomToast} from "../components/toastNotifications";
+import {formatTile} from "../utils/formate";
 
 
 const AboutPage = () => {
-
+    const url = useLocation()
     const navigate = useNavigate();
+
+
+    const title = formatTile(url).toUpperCase()
+
 
     useEffect(() => {
         // Afficher la notification 5 secondes après que la page se charge
@@ -20,11 +25,14 @@ const AboutPage = () => {
     }, [navigate]);
 
     return (
-        <div className="p-4 lg:grid grid-cols-2">
-            <div className={"lg:ml-[83px] lg:mb-[90px]"}>
-                <h2 className={"text-[#AEC1FF] font-bold mb-6 tracking-wider"}>MANIFESTE AIPDA</h2>
-                <div className="max-h-[592px] overflow-scroll">
-                    <p className="text-[#AEC1FFBF] ">
+        <>
+            <div className="p-4 lg:grid grid-cols-2">
+                {/*avant : <div className={"lg:ml-[83px] lg:mb-[26px] text-[#AEC1FF]"}>*/}
+                <div className={"lg:pl-24 text-[#AEC1FF]"}>
+                    <h1 className={"font-bold text-2xl tracking-wider mb-2"}>{title}</h1>
+                    <h2 className={" font-bold mb-[23px] tracking-wider"}>MANIFESTE AIPDA</h2>
+                    <div className="max-h-[592px] overflow-scroll">
+                        <p className=" ">
                         <span>
                             Le monde entier assiste à un changement de paradigme politique,
                         culturel, économique, social et
@@ -38,7 +46,7 @@ const AboutPage = () => {
                         favorable à la création, à la stabilité et à la croissance des entreprises, ainsi que le
                         développement de compétences en phase avec les besoins du marché.
                         </span>
-                        <span className={"lg:block lg:mt-7"}>
+                            <span className={"lg:block lg:mt-3"}>
                         Parallèlement, le design prend de plus en plus d'importance en tant qu'outil essentiel de
                         réflexion stratégique. Non pas parce que la réflexion stratégique est impossible sans le design,
                         mais parce qu'en l'intégrant, elle cherche à considérer de manière holistique l'ensemble des
@@ -50,20 +58,20 @@ const AboutPage = () => {
                         d'anticiper et d'utiliser le design comme un catalyseur pour favoriser un environnement propice
                         à la création, à la stabilité et à la croissance des entreprises ?
                         </span>
-                        <span className={"lg:block lg:mt-7"}>
+                            <span className={"lg:block lg:mt-3"}>
                         Face à ces interrogations, nous avons jugé pertinent de fonder une organisation de design
                         d'utilité publique qui aborderait chaque aspect de la problématique de manière approfondie, afin
                         d’y apporter des solutions.</span>
-                    </p>
+                        </p>
+
+                    </div>
+                    <div className={"mt-4 text-[#AEC1FF]  "}>
+                        <h2 className={"font-bold"}>Elie KOUAME</h2>
+                        <span className="mb-8 block">Président et Coordinateur général</span>
+                    </div>
 
                 </div>
-                <div className={"mt-4 text-[#AEC1FF]  "}>
-                    <h2 className={"font-bold"}>Elie KOUAME</h2>
-                    <span className="mb-8 block">Président et Coordinateur général</span>
-                </div>
-
-            </div>
-            {/*<div className="mt-3 lg:flex flex-col justify-end items-end lg:mr-[83px] lg:mb-[90px] text-[#AEC1FFBF] ">
+                {/*<div className="mt-3 lg:flex flex-col justify-end items-end lg:mr-[83px] lg:mb-[90px] text-[#AEC1FFBF] ">
                 <div className={"bg-[#AEC1FF1C] rounded-2xl"}>
                     <div className={"p-4 "}>
                         <p className={"text-xs font-bold"}>S'ENGAGER AVEC L'AIPDIA </p>
@@ -80,10 +88,12 @@ const AboutPage = () => {
             </div>
             */}
 
-            <ToastContainer closeButton={CloseButtonToast}/>
+                <ToastContainer closeButton={CloseButtonToast}/>
 
 
-        </div>
+            </div>
+
+        </>
     );
 };
 
