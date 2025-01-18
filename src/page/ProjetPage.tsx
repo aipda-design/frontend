@@ -85,7 +85,7 @@ const ProjetPage = () => {
                     <div className={"md:grid grid-cols-2 gap-4 lg:flex flex-col"}>
 
                         <div className={"lg:flex flex-col "}>
-                            <h2 className={"text-xs font-bold"}>A COURT TERME</h2>
+                            <h2 className={"text-xs font-bold mb-2"}>A COURT TERME</h2>
                             {/*mettre sous 3 colonnes s*/}
                             <div className={"lg:flex gap-7 "}>
                                 {tableCourtTerme.map((item, index) => (

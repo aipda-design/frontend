@@ -2,6 +2,32 @@
 import {toast} from "react-toastify";
 import {NavigateFunction} from "react-router-dom";
 
+/*Main page toast */
+export const showCustomMainToast = (navigate: NavigateFunction) => {
+    toast(
+        <div className="text-[#000827]">
+            <p className="text-xs font-bold leading-4 md:text-[16px]  lg:mb-2 lg:text-[18px]">S'ENGAGER AVEC
+                L'AIPDIA</p>
+            <span className="text-[16px] block mb-4">Vous souhaitez rejoindre une représentation ?</span>
+            <button
+                onClick={() => {
+                    toast.dismiss(); // Ferme la notification
+                    navigate('/otherContinent');  // Redirige vers une autre page
+                }}
+                className="bg-[#000827]  text-[#AEC1FF] w-full rounded-lg p-2 hover:bg-europe-blanc hover:text-[#000827]"
+            >
+                Enregistrez-vous ici
+            </button>
+        </div>,
+        {
+            autoClose: false, // La notification reste affichée jusqu'à fermeture manuelle
+            closeOnClick: true, // Fermer en cliquant dessus
+            closeButton: true, // Bouton de fermeture
+            position: "bottom-center", // Position sur l'écran
+            className: "bg-[#AEC1FF] w-[90%]  rounded-2xl md:hidden lg:bg-[#AEC1FF1C]  lg:mr-7", // Style personnalisé
+        }
+    );
+};
 
 /*Normal notification */
 export const showCustomToast = (navigate: NavigateFunction) => {

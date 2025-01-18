@@ -1,17 +1,16 @@
-import {useLocation, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {useEffect} from "react";
 import {ToastContainer} from "react-toastify";
 import CloseButtonToast from "../components/CloseButtonToast";
 import {showCustomToast} from "../components/toastNotifications";
-import {formatTile} from "../utils/formate";
 
 
 const AboutPage = () => {
-    const url = useLocation()
+    //const url = useLocation()
     const navigate = useNavigate();
 
 
-    const title = formatTile(url).toUpperCase()
+    const title: string = "A propos"
 
 
     useEffect(() => {
@@ -30,7 +29,7 @@ const AboutPage = () => {
                 {/*avant : <div className={"lg:ml-[83px] lg:mb-[26px] text-[#AEC1FF]"}>*/}
                 <div className={"lg:pl-24 text-[#AEC1FF]"}>
                     <h1 className={"font-bold text-2xl tracking-wider mb-2"}>{title}</h1>
-                    <h2 className={" font-bold mb-[23px] tracking-wider"}>MANIFESTE AIPDA</h2>
+                    <h2 className={" font-bold mb-[23px] tracking-wider mb-2"}>MANIFESTE AIPDA</h2>
                     <div className="max-h-[592px] overflow-scroll">
                         <p className=" ">
                         <span>
