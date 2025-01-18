@@ -47,7 +47,7 @@ const NavList: React.FC = () => {
                         <div
                             className=" flex w-full md:justify-start flex-wrap md:flex-nowrap lg:absolute lg:block z-50 ">
                             <div
-                                className="group flex  w-inherit justify-start p-2 m-1 md:flex-grow md:items-center md:justify-normal md:ml-[27px] md:mt-[27px]  "
+                                className=" flex  w-inherit justify-start p-2 m-1 md:flex-grow md:items-center md:justify-normal md:ml-[27px] md:mt-[27px]  "
                             >
                                 <div className={"group md:w-[200px] w-inherit flex"}>
                                     <div
