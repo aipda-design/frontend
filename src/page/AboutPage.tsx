@@ -28,8 +28,8 @@ const AboutPage = () => {
             <div className="p-4 lg:grid grid-cols-2">
                 {/*avant : <div className={"lg:ml-[83px] lg:mb-[26px] text-[#AEC1FF]"}>*/}
                 <div className={"lg:pl-24 text-[#AEC1FF]"}>
-                    <h1 className={"font-bold text-2xl tracking-wider mb-2"}>{title}</h1>
-                    <h2 className={" font-bold mb-[23px] tracking-wider mb-2"}>MANIFESTE AIPDA</h2>
+                    <h1 className={"font-bold text-2xl tracking-wider mb-3"}>{title}</h1>
+                    <h2 className={" font-bold mb-[23px] tracking-wider "}>MANIFESTE AIPDA</h2>
                     <div className="max-h-[592px] overflow-scroll">
                         <p className=" ">
                         <span>

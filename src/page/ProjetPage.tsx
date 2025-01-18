@@ -80,12 +80,12 @@ const ProjetPage = () => {
             */}
             <div className={"text-[#AEC1FF]  p-4 lg:flex w-inherit 2xl:pl-28 2xl:pr-24"}>
                 <div>
-                    <h1 className={"font-bold text-2xl tracking-wider mb-2"}>{title}</h1>
+                    <h1 className={"font-bold text-2xl tracking-wider mb-3"}>{title}</h1>
 
                     <div className={"md:grid grid-cols-2 gap-4 lg:flex flex-col"}>
 
                         <div className={"lg:flex flex-col "}>
-                            <h2 className={"text-xs font-bold mb-2"}>A COURT TERME</h2>
+                            <h2 className={"text-xs font-bold mb-[23px]"}>A COURT TERME</h2>
                             {/*mettre sous 3 colonnes s*/}
                             <div className={"lg:flex gap-7 "}>
                                 {tableCourtTerme.map((item, index) => (
