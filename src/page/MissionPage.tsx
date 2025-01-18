@@ -49,7 +49,7 @@ const MissionPage = () => {
         <div className="p-4 lg:w-inherit 2xl:pl-28 text-[#AEC1FF] ">
             <div className="">
                 <h1 className={"font-bold text-2xl tracking-wider mb-2"}>{title}</h1>
-                <h2 className="font-bold text-xs tracking-wider ">MISSION PRINCIPALE</h2>
+                <h2 className="font-bold text-xs tracking-wider mb-2 ">MISSION PRINCIPALE</h2>
                 <div className="mt-6  mb-6 max-w-[667px] lg:mb-[68px]">
                     <span className="text-[32px] ">
                         Renforcer la présence du Design en Afrique, dans les territoires afrodescendants tout en

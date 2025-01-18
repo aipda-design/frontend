@@ -1,8 +1,12 @@
 import {CloseButtonProps} from 'react-toastify';
 import {FaTimesCircle} from "react-icons/fa";
+import {useLocation} from "react-router-dom";
 
 
 const CloseButtonToast = ({closeToast}: CloseButtonProps) => {
+    const url = useLocation()
+    const path = url.pathname;
+    const toastCloseColor = path != '/' ? 'AEC1FF' : '000827'
     return (
         <>
             <button
@@ -16,7 +20,7 @@ const CloseButtonToast = ({closeToast}: CloseButtonProps) => {
                     closeToast(true);
                 }}
             >
-                <FaTimesCircle className="text-[#AEC1FF]"/>
+                <FaTimesCircle className={`text-[#${toastCloseColor}]`}/>
             </button>
         </>
     );
