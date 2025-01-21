@@ -94,7 +94,7 @@ const ContinentNotYet = () => {
     }
     return (
         <Layout>
-            <div>
+            <div className={"mb-5"}>
                 <Logo/>
             </div>
 

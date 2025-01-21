@@ -51,7 +51,7 @@ const NavList: React.FC = () => {
                             >
                                 <div className={"group md:w-[200px] w-inherit flex"}>
                                     <div
-                                        className="flex h-[60px] w-[60px] bg-[#AEC1FF1F] xs:flex items-center justify-center rounded-[13px]"
+                                        className={`flex h-[60px] w-[60px] bg-[#000827] xs:flex items-center justify-center rounded-[13px]`}
                                     >
                                         <img
                                             src={miniLogo}

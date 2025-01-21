@@ -3,6 +3,7 @@ import {useEffect} from "react";
 import {ToastContainer} from "react-toastify";
 import CloseButtonToast from "../components/CloseButtonToast";
 import {showCustomToast} from "../components/toastNotifications";
+import Footer from "../components/Footer";
 
 
 const AboutPage = () => {
@@ -89,8 +90,8 @@ const AboutPage = () => {
 
                 <ToastContainer closeButton={CloseButtonToast}/>
 
-
             </div>
+            <Footer/>
 
         </>
     );

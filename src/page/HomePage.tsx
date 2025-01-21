@@ -1,11 +1,7 @@
 import Logo from "../components/Logo";
 import Box from "../components/Box";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import Footer from "../components/Footer";
-import {useEffect} from "react";
-import {showCustomMainToast} from "../components/toastNotifications";
-import {ToastContainer} from "react-toastify";
-import CloseButtonToast from "../components/CloseButtonToast";
 
 const data = [
     {
@@ -44,29 +40,16 @@ const data = [
 
 const smallInfos = [{
     number: 1,
-    title: "Vous  plongez dans l’univers de l’Alliance Internationale pour la Promotion du Design en Afrique."
+    title: "Vous devenez officiellement membre  de l’Alliance Internationale pour la Promotion du Design en Afrique (AIPDA)."
 }, {
     number: 2,
-    title: "Vous découvrez les projets qui vont organiser l’environnement en Afrique."
+    title: "Vous bénéficiez automatiquement des services et produits pensés pour dynamiser et structurer l’écosystème du design en Afrique."
 }, {
     number: 3,
-    title: "Vous contribuez activement à la dynamique mondiale autour du\n" +
-        "design en Afrique."
+    title: "Vous intégrez une dynamique internationale de développement économique, social et culturel, entièrement portée par la force du design."
 }]
 
 const HomePage = () => {
-
-    const navigate = useNavigate();
-
-    useEffect(() => {
-        // Afficher la notification 5 secondes après que la page se charge
-        const timer = setTimeout(() => {
-            showCustomMainToast(navigate);
-        }, 5000);
-
-        // Nettoyage du timer à la suppression du composant
-        return () => clearTimeout(timer);
-    }, [navigate]);
 
 
     return (
@@ -74,7 +57,7 @@ const HomePage = () => {
             <div
                 className="flex flex-col items-center gap-8  3xl:gap-[80px] p-4 2xl:p-8 2xl:h-[calc(100vh-36px)]  w-full max-w-[1206px] mx-auto relative">
                 <Logo/>
-                <div className="flex flex-col items-center gap-4 text-[#AEC1FF]">
+                <div className="flex flex-col items-center gap-4 text-[#000827]">
                     {/*avant max-w-[688px]px*/}
                     <div className="text-[14px] lg:text-[16px] max-w-[541px] space-y-4">
                         <p className="text-center ">
@@ -85,15 +68,15 @@ const HomePage = () => {
                         </p>
                     </div>
                     <div>
-                        <h2 className="font-bold text-center"> En intégrant une représentation AIPDA</h2>
+                        <h2 className="font-bold text-center mb-2"> En intégrant une représentation AIPDA</h2>
                         <div className="flex justify-center gap-4 flex-wrap">
                             {smallInfos.map((infos, index) => (
-                                <div key={index} className="flex flex-col text-center items-center gap-2 max-w-[238px]">
+                                <div key={index} className="flex flex-col text-center items-center gap-2 max-w-[349px]">
                                     <div className="relative h-8 w-8 md:h-9 md:w-9 3xl:h-14 3xl:w-14">
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 100 100"
-                                            className={`fill-default-color object-contain h-full w-full`}
+                                            className={`fill-[#D4DEFF] object-contain h-full w-full`}
                                         >
                                             <circle cx="50" cy="50" r="40"/>
                                         </svg>
@@ -128,7 +111,7 @@ const HomePage = () => {
                 </div>
                 <Link
                     to={"/otherContinent"}
-                    className="text-[#AEC1FF] text-center md:text-left"
+                    className="text-[#000827] text-center md:text-left"
                 >
                     <span className="">Votre région n’est pas encore active </span>
                     <span className=" underline font-bold block md:inline-block">
@@ -136,7 +119,7 @@ const HomePage = () => {
 						</span>
                 </Link>
                 <div
-                    className="hidden bg-[#000827] rounded-xl  lg:absolute lg:bottom-0 lg:mr-3 md:flex lg:right-0 lg:m-0  xl:w-[95vw] xl:justify-end xl:relative xl:mr-12">
+                    className="hidden rounded-xl  lg:absolute lg:bottom-0 lg:mr-3 md:flex lg:right-0 lg:m-0  xl:w-[95vw] xl:justify-end xl:relative xl:mr-12">
                     <div>
                         <button
                             onClick={() => {
@@ -157,7 +140,6 @@ const HomePage = () => {
                     </div>
 
                 </div>
-                <ToastContainer closeButton={CloseButtonToast}/>
                 <Footer/>
 
             </div>

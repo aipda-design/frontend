@@ -28,6 +28,7 @@ export default {
                     800: "#1e40af",
                     900: "#1e3a8a",
                     950: "#172554",
+                    980: "#D4DEFF"
                 },
                 "afrique-Vert-fonce": "#001C00",
                 "afrique-Vert-clair": "#076423",

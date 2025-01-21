@@ -4,6 +4,7 @@ import CloseButtonToast from "../components/CloseButtonToast";
 import {useEffect} from "react";
 import {showCustomToast} from "../components/toastNotifications";
 import {formatTile} from "../utils/formate";
+import Footer from "../components/Footer";
 
 const table = [
     {
@@ -46,33 +47,37 @@ const MissionPage = () => {
     }, [navigate]);
 
     return (
-        <div className="p-4 lg:w-inherit 2xl:pl-28 text-[#AEC1FF] ">
-            <div className="">
-                <h1 className={"font-bold text-2xl tracking-wider mb-3"}>{title}</h1>
-                <h2 className="font-bold text-xs tracking-wider mb-2 ">MISSION PRINCIPALE</h2>
-                <div className="mt-6  mb-6 max-w-[667px] lg:mb-[68px]">
+        <>
+            <div className="p-4 lg:w-inherit 2xl:pl-28 text-[#AEC1FF] ">
+                <div className="">
+                    <h1 className={"font-bold text-2xl tracking-wider mb-3"}>{title}</h1>
+                    <h2 className="font-bold text-xs tracking-wider mb-2 ">MISSION PRINCIPALE</h2>
+                    <div className="mt-6  mb-6 max-w-[667px] lg:mb-[68px]">
                     <span className="text-[32px] ">
                         Renforcer la présence du Design en Afrique, dans les territoires afrodescendants tout en
                         soutenant les acteurs.
                     </span>
-                </div>
-                <h2 className="font-bold text-xs tracking-wider ">AXES DE DEVELOPPEMENT</h2>
-                <div className="mt-6 lg:mt-0 lg:flex flex-wrap gap-8">
-                    {/*Crée un tableau avec les infos */}
-                    {table.map((item, index) => (
-                        <div key={index} className="mt-6 mb-6 ">
-                            <div className={"mb-4"}>
-                                <h3 className="text-2xl">{item.title}</h3>
-                                <span className={"text-xs font-bold"}>{item.subTitle}</span>
+                    </div>
+                    <h2 className="font-bold text-xs tracking-wider ">AXES DE DEVELOPPEMENT</h2>
+                    <div className="mt-6 lg:mt-0 lg:flex flex-wrap gap-8">
+                        {/*Crée un tableau avec les infos */}
+                        {table.map((item, index) => (
+                            <div key={index} className="mt-6 mb-6 ">
+                                <div className={"mb-4"}>
+                                    <h3 className="text-2xl">{item.title}</h3>
+                                    <span className={"text-xs font-bold"}>{item.subTitle}</span>
+                                </div>
+                                <span className="block w-[306px] max-h-[179px]">{item.details}</span>
                             </div>
-                            <span className="block w-[306px] max-h-[179px]">{item.details}</span>
-                        </div>
-                    ))}
+                        ))}
 
+                    </div>
                 </div>
+                <ToastContainer closeButton={CloseButtonToast}/>
+
             </div>
-            <ToastContainer closeButton={CloseButtonToast}/>
-        </div>
+            <Footer/>
+        </>
     );
 };
 

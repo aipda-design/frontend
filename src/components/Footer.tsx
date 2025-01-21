@@ -1,4 +1,4 @@
-import {NavLink} from "react-router-dom";
+import {NavLink, useLocation} from "react-router-dom";
 
 const footerItems = [
     {
@@ -26,15 +26,21 @@ const footerItems = [
     }
 ]
 const Footer = () => {
+
+    const url = useLocation();
+    const pathname = url.pathname;
+    const isNotHomePage = pathname !== "/"
+
     return (
-        <footer className={"fixed bottom-4 p-3 z-20 rounded-2xl bg-[#2B365D] md:hidden  flex justify-center"}>
+        <footer
+            className={`fixed bottom-4 p-3 z-20 rounded-2xl ${isNotHomePage ? 'bg-[#2B365D] ' : 'bg-[#000827]'} md:hidden  flex justify-center`}>
 
             <div className={"flex flex-wrap gap-1"}>
                 {footerItems.map((item, i) => (
                     <NavLink key={i} to={item.link}
                              className={({isActive}) =>
-                                 `text-[#000827] rounded-[10px] p-1 border border-[#000827] text-xs ${
-                                     isActive ? 'bg-europe-dark-bleu text-[#AEC1FF] rounded-lg md:w-fill text-center' : 'hover: hover:bg-[#AEC1FF]'
+                                 `rounded-[10px] p-1 border border-[#D4DEFF] text-xs ${
+                                     isActive ? 'bg-[#D4DEFF] text-europe-dark-bleu !important rounded-lg  text-center' : 'hover:text-[#000827] hover:bg-[#AEC1FF]'
                                  }`}>
                         {item.name}
                     </NavLink>
