@@ -1,7 +1,7 @@
 //import logo from "@/assets/logo.png";
 import {useEffect, useState} from "react";
 import {useLocation} from "react-router-dom";
-import logo from "@/assets/Plogo.png";
+import logo from "../assets/Logo1.svg";
 
 {
     /*import group2 from "@/assets/images/group-2.png";

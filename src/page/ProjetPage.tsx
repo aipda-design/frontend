@@ -4,6 +4,7 @@ import {useEffect} from "react";
 import {useLocation, useNavigate} from "react-router-dom";
 import {showCustomToastProjectPart1, showCustomToastProjetPart2} from "../components/toastNotifications";
 import {formatTile} from "../utils/formate";
+import Footer from "../components/Footer";
 
 const tableCourtTerme = [
     {
@@ -126,8 +127,9 @@ const ProjetPage = () => {
 
                 </div>
                 <ToastContainer closeButton={CloseButtonToast}/>
-            </div>
 
+            </div>
+            <Footer/>
         </>
 
     );
