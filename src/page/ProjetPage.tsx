@@ -1,6 +1,6 @@
 import {ToastContainer} from "react-toastify";
 import CloseButtonToast from "../components/CloseButtonToast";
-import {useEffect} from "react";
+import {useCallback, useEffect, useState} from "react";
 import {useLocation, useNavigate} from "react-router-dom";
 import {showCustomToastProjectPart1, showCustomToastProjetPart2} from "../components/toastNotifications";
 import {formatTile} from "../utils/formate";
@@ -46,32 +46,47 @@ const tableLongTerme = [
 
 
 const ProjetPage = () => {
+    const [toastPosition, setToastPosition] = useState<"bottom-right" | "bottom-center">("bottom-right");
+
     const navigate = useNavigate();
     const url = useLocation()
+    const [small, setSmall] = useState<boolean>(false);
 
 
     const title = formatTile(url).toUpperCase()
 
 
+    const updateToastPosition = useCallback(() => {
+        if (window.innerWidth < 768) {
+            setToastPosition("bottom-center");
+            setSmall(true);
+        } else {
+            setToastPosition("bottom-right");
+        }
+    }, []);
+
     useEffect(() => {
+
+        updateToastPosition(); // Vérifie initialement
+        window.addEventListener("resize", updateToastPosition);
         // Afficher la notification 5 secondes après que la page se charge
         const timer = setTimeout(() => {
-            showCustomToastProjectPart1(navigate);
+            showCustomToastProjectPart1(navigate, toastPosition);
         }, 5000);
 
 
         const timer2 = setTimeout(() => {
-            showCustomToastProjetPart2(navigate);
+            showCustomToastProjetPart2(navigate, toastPosition);
         }, 7000);
 
-
-        // Nettoyage du timer à la suppression du composant
         return () => {
             clearTimeout(timer);
             clearTimeout(timer2);
+            window.removeEventListener("resize", updateToastPosition)
+
 
         }
-    }, [navigate]);
+    }, [navigate, toastPosition, updateToastPosition]);
 
     return (
         <>
@@ -79,9 +94,9 @@ const ProjetPage = () => {
                 Avant sans les nouvelles modifications
                 <div className={"text-[#AEC1FF] mt-[27px] p-4 lg:flex lg:w-inherit lg:pl-24 lg:pr-24"}>
             */}
-            <div className={"text-[#AEC1FF]  p-4 lg:flex w-inherit 2xl:pl-28 2xl:pr-24"}>
+            <div className={"text-[#000827]  p-4 lg:flex w-inherit 2xl:pl-28 2xl:pr-24"}>
                 <div>
-                    <h1 className={"font-bold text-2xl tracking-wider mb-3"}>{title}</h1>
+                    <h1 className={"font-bold text-3xl tracking-wider mb-3"}>{title.toUpperCase()}</h1>
 
                     <div className={"md:grid grid-cols-2 gap-4 lg:flex flex-col"}>
 
@@ -126,7 +141,7 @@ const ProjetPage = () => {
                     </div>
 
                 </div>
-                <ToastContainer closeButton={CloseButtonToast}/>
+                <ToastContainer closeButton={CloseButtonToast} style={small ? {zIndex: 1} : {}}/>
 
             </div>
             <Footer/>

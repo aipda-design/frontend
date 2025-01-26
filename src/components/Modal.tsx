@@ -34,7 +34,7 @@ export const Modal: React.FC<IModalProps> = ({
 
     const url = useLocation();
 
-    const {handleSubmit, results} = useUsers()
+    const {handleSubmit} = useUsers()
 
     useEffect(() => {
         switch (url.pathname) {
@@ -71,7 +71,6 @@ export const Modal: React.FC<IModalProps> = ({
             continentName: continent,
         };
 
-        console.log("forme data is", newFormData)
 
         if (Object.values(newFormData).some(value => value.trim() === "")) {
             setMessageErreur("Vous avez pas bien remplie vos champs")
@@ -87,7 +86,6 @@ export const Modal: React.FC<IModalProps> = ({
         } else {
             alert("OUPS choisie un pays ");
         }
-        console.log("result of the request is :", results);
 
     };
     if (messageErreur) {

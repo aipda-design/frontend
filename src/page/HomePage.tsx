@@ -1,6 +1,6 @@
 import Logo from "../components/Logo";
 import Box from "../components/Box";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import Footer from "../components/Footer";
 
 const data = [
@@ -50,7 +50,7 @@ const smallInfos = [{
 }]
 
 const HomePage = () => {
-
+    const navigate = useNavigate();
 
     return (
         <>
@@ -122,20 +122,10 @@ const HomePage = () => {
                     className="hidden rounded-xl  lg:absolute lg:bottom-0 lg:mr-3 md:flex lg:right-0 lg:m-0  xl:w-[95vw] xl:justify-end xl:relative xl:mr-12">
                     <div>
                         <button
-                            onClick={() => {
-                            }}
+                            onClick={() => navigate('/mention-legal')}
                             className="bg-[#AEC1FF40]   text-[#000827] w-full rounded-2xl p-2 hover:bg-[#000827] hover:text-[#AEC1FF]"
                         >
-                            Mentions légales
-                        </button>
-                    </div>
-                    <div>
-                        <button
-                            onClick={() => {
-                            }}
-                            className="bg-[#AEC1FF40]   text-[#000827] w-[63px] rounded-2xl p-2 ml-[13px] hover:bg-[#000827] hover:text-[#AEC1FF] "
-                        >
-                            CGU
+                            Mentions légales • CGU
                         </button>
                     </div>
 

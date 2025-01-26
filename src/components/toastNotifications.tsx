@@ -8,7 +8,7 @@ export const showCustomMainToast = (navigate: NavigateFunction) => {
         <div className="text-[#000827] md:text-[#AEC1FFBF]">
             <p className="text-xs font-bold leading-4 md:text-[16px]  lg:mb-2 lg:text-[18px]">S'ENGAGER AVEC
                 L'AIPDIA</p>
-            <span className="text-[16px] block mb-4">Vous souhaitez rejoindre une représentation ?</span>
+            <span className="text-[16px] block max-w-[202px] md:w-full  mb-4">Vous souhaitez rejoindre une représentation ?</span>
             <button
                 onClick={() => {
                     toast.dismiss(); // Ferme la notification
@@ -29,19 +29,21 @@ export const showCustomMainToast = (navigate: NavigateFunction) => {
     );
 };
 
-/*Normal notification */
-export const showCustomToast = (navigate: NavigateFunction) => {
+/*Normal notification About*/
+export const showCustomToast = (navigate: NavigateFunction, toastPosition: "bottom-right" | "bottom-center") => {
+    console.log("toast position is :", toastPosition);
     toast(
-        <div className="text-[#000827] md:text-[#AEC1FFBF]">
-            <p className="text-xs font-bold leading-4 md:text-[16px]  lg:mb-2 lg:text-[18px]">S'ENGAGER AVEC
+        <div className="text-[#000827] w-fill ">
+            <p className="text-xs font-bold leading-4 mb-4 md:text-[16px]  lg:mb-2 lg:text-[18px]">S'ENGAGER AVEC
                 L'AIPDIA</p>
-            <span className="text-[16px] block mb-4">Vous souhaitez rejoindre une représentation ?</span>
+            <span
+                className="text-[16px] w-[200px] block  md:w-full mb-4">Vous souhaitez rejoindre une représentation ?</span>
             <button
                 onClick={() => {
                     toast.dismiss(); // Ferme la notification
                     navigate('/');  // Redirige vers une autre page
                 }}
-                className="bg-[#000827]   text-[#AEC1FF]  md:bg-[#AEC1FF]  md:text-[#000827] w-full rounded-lg p-2 hover:bg-europe-blanc hover:text-[#000827] md:hover:bg-[#000827] md:hover:text-[#AEC1FF]"
+                className="bg-[#000827] top text-[#AEC1FF]   w-full rounded-lg p-2 hover:bg-europe-blanc hover:text-[#000827] md:hover:bg-[#000827] md:hover:text-[#AEC1FF]"
             >
                 Enregistrez-vous ici
             </button>
@@ -50,8 +52,45 @@ export const showCustomToast = (navigate: NavigateFunction) => {
             autoClose: false, // La notification reste affichée jusqu'à fermeture manuelle
             closeOnClick: true, // Fermer en cliquant dessus
             closeButton: true, // Bouton de fermeture
-            position: "bottom-right", // Position sur l'écran
-            className: "bg-[#AEC1FF] md:bg-[#000827] w-[98%] rounded-2xl mr-1 mb-14 md:w-full lg:bg-[#AEC1FF1C]  lg:mr-7", // Style personnalisé
+            style: {
+                zIndex: 10,
+            },
+            position: toastPosition, // Position sur l'écran
+            className: "bg-[#D4DEFF] w-[85%] rounded-2xl -top-12 md:top-0 mr-1  md:w-full  lg:mr-7", // Style personnalisé
+        }
+    );
+};
+
+
+/*Normal notification, mision*/
+
+export const showCustomToastMission = (navigate: NavigateFunction, toastPosition: "bottom-right" | "bottom-center") => {
+    console.log("toast position is :", toastPosition);
+    toast(
+        <div className="text-[#000827] w-fill ">
+            <p className="text-xs font-bold leading-4 mb-4 md:text-[16px]  lg:mb-2 lg:text-[18px]">S'ENGAGER AVEC
+                L'AIPDIA</p>
+            <span
+                className="text-[16px] w-[200px] block  md:w-full mb-4">Vous souhaitez rejoindre une représentation ?</span>
+            <button
+                onClick={() => {
+                    toast.dismiss(); // Ferme la notification
+                    navigate('/');  // Redirige vers une autre page
+                }}
+                className="bg-[#000827] top text-[#AEC1FF]   w-full rounded-lg p-2 hover:bg-europe-blanc hover:text-[#000827] md:hover:bg-[#000827] md:hover:text-[#AEC1FF]"
+            >
+                Enregistrez-vous ici
+            </button>
+        </div>,
+        {
+            autoClose: false, // La notification reste affichée jusqu'à fermeture manuelle
+            closeOnClick: true, // Fermer en cliquant dessus
+            closeButton: true, // Bouton de fermeture
+            style: {
+                zIndex: 10,
+            },
+            position: toastPosition, // Position sur l'écran
+            className: "bg-[#D4DEFF] w-[85%] rounded-2xl -top-12 md:top-0 mr-1  md:w-full  lg:mr-7", // Style personnalisé
         }
     );
 };
@@ -60,19 +99,21 @@ export const showCustomToast = (navigate: NavigateFunction) => {
 /*Pour cette partie, je vais les séparer en 2 pour les faire venir à deux temps different   */
 
 
-export const showCustomToastProjectPart1 = (navigate: NavigateFunction) => {
+export const showCustomToastProjectPart1 = (navigate: NavigateFunction, toastPosition: "bottom-right" | "bottom-center") => {
     toast(
-        <div className={"text-[#000827] md:text-[#AEC1FFBF]"}>
+        <div className={"text-[#000827] w-fill"}>
 
-            <p className={"text-xs font-bold leading-4 md:text-[16px] lg:mb-2 lg:text-[18px]"}>SOUTENIR UN PROJET</p>
-            <span className={"text-[15px] block mb-4"}>Vous souhaitez soutenir un projet ?</span>
+            <p className={"text-xs font-bold leading-4 mb-4 md:text-[16px] lg:mb-2 lg:text-[18px]"}>SOUTENIR UN
+                PROJET</p>
+            <span
+                className={"text-[15px] block w-[200px] md:w-full  mb-4"}>Vous souhaitez soutenir un projet ?</span>
 
             <button
                 onClick={() => {
                     toast.dismiss(); // Ferme la notification
                     navigate('/');  // Redirige vers une autre page
                 }}
-                className={"bg-[#000827]   text-[#AEC1FF] md:bg-[#AEC1FF] md:text-[#000827] w-full rounded-lg p-2 md:hover:bg-[#000827] md:hover:text-[#AEC1FF]"}>
+                className={"bg-[#000827]   text-[#AEC1FF]  w-full rounded-lg p-2 hover:bg-europe-blanc hover:text-[#000827] md:hover:bg-[#000827] md:hover:text-[#AEC1FF]"}>
                 Écrivez-nous ici
             </button>
 
@@ -81,25 +122,26 @@ export const showCustomToastProjectPart1 = (navigate: NavigateFunction) => {
             autoClose: false, // La notification reste affichée jusqu'à fermeture manuelle
             closeOnClick: true, // Fermer en cliquant dessus
             closeButton: true, // Bouton de fermeture
-            position: "bottom-right", // Position sur l'écran
-            className: "bg-[#AEC1FF] md:bg-[#000827] rounded-2xl w-[98%] mr-1 mb-14 lg:bg-[#AEC1FF1C]  md:w-full lg:mr-7 mb-3 block", // Style personnalisé
+            position: toastPosition, // Position sur l'écran
+            className: "bg-[#D4DEFF] rounded-2xl w-[85%] mr-1 -top-12 md:top-0 md:w-full lg:mr-7 mb-3 block", // Style personnalisé
         }
     );
 
 }
 
-export const showCustomToastProjetPart2 = (navigate: NavigateFunction) => {
+export const showCustomToastProjetPart2 = (navigate: NavigateFunction, toastPosition: "bottom-right" | "bottom-center") => {
     toast(
-        <div className="text-[#000827] md:text-[#AEC1FFBF] lg:w-inherit">
-            <p className="text-xs font-bold leading-4 md:text-[16px]  lg:mb-2 lg:text-[18px]">S'ENGAGER AVEC
+        <div className="text-[#000827] w-fill ">
+            <p className="text-xs font-bold leading-4 mb-4 md:text-[16px]  lg:mb-2 lg:text-[18px]">S'ENGAGER AVEC
                 L'AIPDIA</p>
-            <span className="text-[15px] block mb-4">Vous souhaitez rejoindre une représentation ?</span>
+            <span
+                className="text-[15px] block w-[200px] md:w-full  mb-4">Vous souhaitez rejoindre une représentation ?</span>
             <button
                 onClick={() => {
                     toast.dismiss(); // Ferme la notification
                     navigate('/');  // Redirige vers une autre page
                 }}
-                className={"bg-[#000827]   text-[#AEC1FF] md:bg-[#AEC1FF] md:text-[#000827] w-full rounded-lg p-2 md:hover:bg-[#000827] md:hover:text-[#AEC1FF]"}>
+                className={"bg-[#000827] text-[#AEC1FF]    w-full rounded-lg p-2  hover:bg-europe-blanc hover:text-[#000827]md:hover:bg-[#000827] md:hover:text-[#AEC1FF]"}>
 
                 Enregistrez-vous ici
             </button>
@@ -108,8 +150,8 @@ export const showCustomToastProjetPart2 = (navigate: NavigateFunction) => {
             autoClose: false, // La notification reste affichée jusqu'à fermeture manuelle
             closeOnClick: true, // Fermer en cliquant dessus
             closeButton: true, // Bouton de fermeture
-            position: "bottom-right", // Position sur l'écran
-            className: "bg-[#AEC1FF] md:bg-[#000827] rounded-2xl w-[98%] mr-1 mb-14 lg:bg-[#AEC1FF1C]  md:w-full lg:mr-7 mb-3 block", // Style personnalisé
+            position: toastPosition, // Position sur l'écran
+            className: "bg-[#D4DEFF] rounded-2xl -top-12 md:top-0 mr-1 lg:bg-[#AEC1FF1C]  md:w-full lg:mr-7 block", // Style personnalisé
         }
     );
 };

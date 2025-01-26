@@ -34,7 +34,7 @@ const Accordion: React.FC<AccordionProps> = ({
     const [continent, setContinent] = useState<string>("");
 
 
-    const {handleSubmit, results} = useUsers()
+    const {handleSubmit} = useUsers()
 
     const navigate = useNavigate();
     const url = useLocation();
@@ -66,7 +66,6 @@ const Accordion: React.FC<AccordionProps> = ({
             continentName: continent,
         };
 
-        console.log("forme data is", newFormData)
 
         if (Object.values(newFormData).some(value => value.trim() === "")) {
             setMessageErreur("Vous avez pas bien remplie vos champs")
@@ -76,7 +75,6 @@ const Accordion: React.FC<AccordionProps> = ({
 
         handleSubmit(newFormData)
 
-        console.log("result of the request is :", results);
 
         navigate("/result", {state: {option: title}});
     };

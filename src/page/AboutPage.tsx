@@ -1,5 +1,5 @@
 import {useNavigate} from "react-router-dom";
-import {useEffect} from "react";
+import {useCallback, useEffect, useState} from "react";
 import {ToastContainer} from "react-toastify";
 import CloseButtonToast from "../components/CloseButtonToast";
 import {showCustomToast} from "../components/toastNotifications";
@@ -9,27 +9,44 @@ import Footer from "../components/Footer";
 const AboutPage = () => {
     //const url = useLocation()
     const navigate = useNavigate();
+    const [toastPosition, setToastPosition] = useState<"bottom-right" | "bottom-center">("bottom-right");
+    const [small, setSmall] = useState<boolean>(false);
 
 
     const title: string = "A propos"
 
 
+    const updateToastPosition = useCallback(() => {
+        if (window.innerWidth < 768) {
+            setToastPosition("bottom-center");
+            setSmall(true)
+        } else {
+            setToastPosition("bottom-right");
+        }
+    }, []);
+
     useEffect(() => {
+
+        updateToastPosition(); // Vérifie initialement
+        window.addEventListener("resize", updateToastPosition);
         // Afficher la notification 5 secondes après que la page se charge
         const timer = setTimeout(() => {
-            showCustomToast(navigate);
+            showCustomToast(navigate, toastPosition);
         }, 5000);
 
         // Nettoyage du timer à la suppression du composant
-        return () => clearTimeout(timer);
-    }, [navigate]);
+        return () => {
+            clearTimeout(timer);
+            window.removeEventListener("resize", updateToastPosition)
+        }
+    }, [navigate, toastPosition, updateToastPosition]);
 
     return (
         <>
             <div className="p-4 lg:grid grid-cols-2">
                 {/*avant : <div className={"lg:ml-[83px] lg:mb-[26px] text-[#AEC1FF]"}>*/}
-                <div className={"lg:pl-24 text-[#AEC1FF]"}>
-                    <h1 className={"font-bold text-2xl tracking-wider mb-3"}>{title}</h1>
+                <div className={"lg:pl-24 text-[#000827]"}>
+                    <h1 className={"font-bold text-3xl tracking-wider mb-3"}>{title.toUpperCase()}</h1>
                     <h2 className={" font-bold mb-[23px] tracking-wider "}>MANIFESTE AIPDA</h2>
                     <div className="max-h-[592px] overflow-scroll">
                         <p className=" ">
@@ -65,7 +82,7 @@ const AboutPage = () => {
                         </p>
 
                     </div>
-                    <div className={"mt-4 text-[#AEC1FF]  "}>
+                    <div className={"mt-4  "}>
                         <h2 className={"font-bold"}>Elie KOUAME</h2>
                         <span className="mb-8 block">Président et Coordinateur général</span>
                     </div>
@@ -88,7 +105,7 @@ const AboutPage = () => {
             </div>
             */}
 
-                <ToastContainer closeButton={CloseButtonToast}/>
+                <ToastContainer closeButton={CloseButtonToast} style={small ? {zIndex: 1} : {}}/>
 
             </div>
             <Footer/>
