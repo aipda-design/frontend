@@ -12,7 +12,6 @@ import {FaArrowCircleLeft} from "react-icons/fa";
 const Content = () => {
     const [datas, setDatas] = useState<CountryData | undefined>(undefined);
     const pathname = useLocation().pathname;
-    console.log("pathName :", pathname);
     const {getCountryByLink} = useCountries();
     const [showModal, setShowModal] = useState(false);
     const navigate = useNavigate();

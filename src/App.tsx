@@ -12,6 +12,7 @@ import MissionPage from "./page/MissionPage";
 import ProjetPage from "./page/ProjetPage";
 import HomePage from "./page/HomePage";
 import {UserContext} from "./service/userContexte/userContext";
+import MentionLegal from "./page/MentionLegal";
 
 
 const router = createBrowserRouter([
@@ -35,7 +36,11 @@ const router = createBrowserRouter([
             {
                 path: "projets",
                 element: <ProjetPage/>
-            }
+            },
+            {
+                path: "mention-legal",
+                element: <MentionLegal/>
+            },
         ]
 
     },

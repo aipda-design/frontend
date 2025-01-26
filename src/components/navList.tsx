@@ -29,7 +29,6 @@ const NavList: React.FC = () => {
     const navigate = useNavigate();
 
 
-    console.log("location", location.pathname);
     const shouldHideNav = (path: string): boolean => path !== "/";
     const putNavAbolusute = (path: string): boolean => path === "/";
 
@@ -39,7 +38,6 @@ const NavList: React.FC = () => {
         setIsHome(putNavAbolusute(location.pathname));
 
     }, [location.pathname]);
-    console.log("is it home ", isHome);
     return (
         <>
             {isHome ? (
@@ -122,7 +120,7 @@ const NavList: React.FC = () => {
 
                                 <div className={"group md:w-[200px] w-inherit flex"}>
                                     <div
-                                        className="flex h-[60px] w-[60px] bg-[#AEC1FF1F] xs:flex items-center justify-center rounded-[13px]"
+                                        className="flex h-[60px] w-[60px] bg-[#000827] xs:flex items-center justify-center rounded-[13px]"
                                     >
                                         <img
                                             src={miniLogo}
@@ -172,8 +170,8 @@ const NavList: React.FC = () => {
                                             className="flex items-center cursor-pointer md:mb-4 md:mr-[27px] md:mt-[17px] ml-auto"
                                             onClick={() => navigate("/")}
                                         >
-                                            <FaArrowCircleLeft className="text-[#AEC1FF]"/>
-                                            <span className="ml-2 text-[#AEC1FF]">Retour</span>
+                                            <FaArrowCircleLeft className="text-[#000827]"/>
+                                            <span className="ml-2 text-[#000827]">Retour</span>
                                         </div>
                                     </div>
 

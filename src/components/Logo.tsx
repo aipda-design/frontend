@@ -14,7 +14,6 @@ export default function Logo() {
     const url = useLocation();
     const [active, setActive] = useState(false);
 
-    console.log("url", url.pathname);
     useEffect(() => {
         if (url.pathname === "/") {
             setActive(true);
