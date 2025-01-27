@@ -24,7 +24,7 @@ export const showCustomMainToast = (navigate: NavigateFunction) => {
             closeOnClick: true, // Fermer en cliquant dessus
             closeButton: true, // Bouton de fermeture
             position: "bottom-right", // Position sur l'écran
-            className: "bg-[#AEC1FF] w-[98%] mr-1 rounded-2xl mb-14 md:w-full  lg:bg-[#AEC1FF1C]  lg:mr-7", // Style personnalisé
+            className: "bg-[#AEC1FF] w-[98%] mr-1 rounded-2xl mb-14 md:w-full   lg:mr-7", // Style personnalisé
         }
     );
 };
@@ -43,7 +43,7 @@ export const showCustomToast = (navigate: NavigateFunction, toastPosition: "bott
                     toast.dismiss(); // Ferme la notification
                     navigate('/');  // Redirige vers une autre page
                 }}
-                className="bg-[#000827] top text-[#AEC1FF]   w-full rounded-lg p-2 hover:bg-europe-blanc hover:text-[#000827] md:hover:bg-[#000827] md:hover:text-[#AEC1FF]"
+                className="bg-[#000827] top text-[#AEC1FF]   w-full rounded-lg p-2 hover:bg-[#AEC1FF] hover:text-[#000827] md:hover:bg-[#000827] md:hover:text-[#AEC1FF]"
             >
                 Enregistrez-vous ici
             </button>
@@ -52,9 +52,6 @@ export const showCustomToast = (navigate: NavigateFunction, toastPosition: "bott
             autoClose: false, // La notification reste affichée jusqu'à fermeture manuelle
             closeOnClick: true, // Fermer en cliquant dessus
             closeButton: true, // Bouton de fermeture
-            style: {
-                zIndex: 10,
-            },
             position: toastPosition, // Position sur l'écran
             className: "bg-[#D4DEFF] w-[85%] rounded-2xl -top-12 md:top-0 mr-1  md:w-full  lg:mr-7", // Style personnalisé
         }
@@ -86,9 +83,6 @@ export const showCustomToastMission = (navigate: NavigateFunction, toastPosition
             autoClose: false, // La notification reste affichée jusqu'à fermeture manuelle
             closeOnClick: true, // Fermer en cliquant dessus
             closeButton: true, // Bouton de fermeture
-            style: {
-                zIndex: 10,
-            },
             position: toastPosition, // Position sur l'écran
             className: "bg-[#D4DEFF] w-[85%] rounded-2xl -top-12 md:top-0 mr-1  md:w-full  lg:mr-7", // Style personnalisé
         }
@@ -113,7 +107,7 @@ export const showCustomToastProjectPart1 = (navigate: NavigateFunction, toastPos
                     toast.dismiss(); // Ferme la notification
                     navigate('/');  // Redirige vers une autre page
                 }}
-                className={"bg-[#000827]   text-[#AEC1FF]  w-full rounded-lg p-2 hover:bg-europe-blanc hover:text-[#000827] md:hover:bg-[#000827] md:hover:text-[#AEC1FF]"}>
+                className={"bg-[#000827]   text-[#AEC1FF]  w-full rounded-lg p-2 hover:bg-[#AEC1FF] hover:text-[#000827] "}>
                 Écrivez-nous ici
             </button>
 
@@ -141,7 +135,7 @@ export const showCustomToastProjetPart2 = (navigate: NavigateFunction, toastPosi
                     toast.dismiss(); // Ferme la notification
                     navigate('/');  // Redirige vers une autre page
                 }}
-                className={"bg-[#000827] text-[#AEC1FF]    w-full rounded-lg p-2  hover:bg-europe-blanc hover:text-[#000827]md:hover:bg-[#000827] md:hover:text-[#AEC1FF]"}>
+                className={"bg-[#000827] text-[#AEC1FF]    w-full rounded-lg p-2  hover:bg-[#AEC1FF] hover:text-[#000827] "}>
 
                 Enregistrez-vous ici
             </button>
@@ -151,7 +145,7 @@ export const showCustomToastProjetPart2 = (navigate: NavigateFunction, toastPosi
             closeOnClick: true, // Fermer en cliquant dessus
             closeButton: true, // Bouton de fermeture
             position: toastPosition, // Position sur l'écran
-            className: "bg-[#D4DEFF] rounded-2xl -top-12 md:top-0 mr-1 lg:bg-[#AEC1FF1C]  md:w-full lg:mr-7 block", // Style personnalisé
+            className: "bg-[#D4DEFF] rounded-2xl w-[85%] -top-12 md:top-0 mr-1  md:w-full lg:mr-7 block", // Style personnalisé
         }
     );
 };

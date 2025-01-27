@@ -1,7 +1,9 @@
 //import logo from "@/assets/logo.png";
 import {useEffect, useState} from "react";
 import {useLocation} from "react-router-dom";
-import logo from "../assets/Logo1.svg";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import Logos from "@/assets/Logo1.svg?react";
 
 {
     /*import group2 from "@/assets/images/group-2.png";
@@ -10,7 +12,12 @@ import image from "@/assets/images/img.png";
 
 */
 }
-export default function Logo() {
+
+interface ILogoProps {
+    color?: string
+}
+
+export default function Logo({color}: ILogoProps) {
     const url = useLocation();
     const [active, setActive] = useState(false);
 
@@ -30,7 +37,10 @@ export default function Logo() {
 				<img src={Vector} alt="Vector background" className="w-full h-full" />
 			</div> */}
             {/*<img src={logo} alt="Logo" className="object-content" />*/}
-            <img src={logo} alt="Logo" className="object-contain"/>
+            {/*<img src={logo} alt="Logo" className="object-contain"/>*/}
+            <Logos
+                style={{filter: `${color ? 'invert(1) hue-rotate(182deg) brightness(1.2) contrast(0.9)' : 'invert(0)'}`}}/>
+
             {/* c'est ici que je veux afficher les images de mon groupe */}
             {/* Center group of images */}
             {/* Center group of images */}
