@@ -49,7 +49,7 @@ export default function Box({
                     />
                 </div>
                 <div className=" flex  items-end gap-3 self-stretch mt-4 ">
-                    <span className={`font-bold text-${textColor}`}>{actionAnnonce}</span>
+                    <span className={`font-bold text-${textColor} text-[14px]`}>{actionAnnonce}</span>
                     <div className={`text-${textColor}`}>
                         <FaPlus/>
                     </div>

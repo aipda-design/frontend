@@ -48,7 +48,7 @@ const Content = () => {
                     >
                         <div className="flex flex-col md:flex-col md:justify-between p-4 lg:pb-8 lg:pl-8 ">
                             <div className="mb-5 lg:mb-0 lg:flex-none">
-                                <Logo/>
+                                <Logo color={"white"}/>
                             </div>
                             <div className="space-y-4 mt-8 lg:mt-0">
                                 <div

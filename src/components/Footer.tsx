@@ -15,7 +15,7 @@ const footerItems = [
     },
     {
         link: '/mention-legal',
-        name: 'Mentions légales • CGU',
+        name: 'Mentions légales',
 
     },
 
