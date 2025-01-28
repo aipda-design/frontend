@@ -6,7 +6,7 @@ import dts from "vite-plugin-dts";
 
 // https://vite.dev/config/
 export default defineConfig({
-   
+
     plugins: [
         react(),
         dts(),
@@ -20,5 +20,9 @@ export default defineConfig({
         alias: {
             "@": "/src",
         },
+    },
+    server: {
+        allowedHosts: ["wqf3sq-5173.csb.app"], // Autorise cet hôte spécifique
+        host: "0.0.0.0", // Autorise l'accès depuis des réseaux externes
     },
 });
