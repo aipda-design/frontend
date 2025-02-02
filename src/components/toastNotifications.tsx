@@ -43,7 +43,7 @@ export const showCustomToast = (navigate: NavigateFunction, toastPosition: "bott
                     toast.dismiss(); // Ferme la notification
                     navigate('/');  // Redirige vers une autre page
                 }}
-                className="bg-[#000827] top text-[#AEC1FF]   w-full rounded-lg p-2 hover:bg-[#AEC1FF] hover:text-[#000827] md:hover:bg-[#000827] md:hover:text-[#AEC1FF]"
+                className="bg-[#000827] top text-[#AEC1FF] top  w-full rounded-lg p-2 hover:bg-[#AEC1FF] hover:text-[#000827] md:hover:bg-[#000827] md:hover:text-[#AEC1FF]"
             >
                 Enregistrez-vous ici
             </button>
@@ -53,7 +53,7 @@ export const showCustomToast = (navigate: NavigateFunction, toastPosition: "bott
             closeOnClick: true, // Fermer en cliquant dessus
             closeButton: true, // Bouton de fermeture
             position: toastPosition, // Position sur l'écran
-            className: "bg-[#D4DEFF] w-[85%] rounded-2xl -top-12 md:top-0 mr-1  md:w-full  lg:mr-7", // Style personnalisé
+            className: "bg-[#D4DEFF] w-[85%] rounded-2xl -top-16 md:top-0 mr-1  md:w-full  lg:mr-7", // Style personnalisé
         }
     );
 };

@@ -96,7 +96,8 @@ const HomePage = () => {
                     </div>
                 </div>
 
-                <div className="group grid gap-3 md:gap-4 md:grid grid-cols-2 lg:flex flex-wrap justify-center p-2">
+                <div
+                    className="group grid gap-3 md:gap-4 md:grid md:grid-cols-2 lg:flex flex-wrap justify-center p-2   grid-cols-2 mb-8">
                     {data.map((infos, index) => (
                         <Box
                             key={index}
@@ -111,7 +112,7 @@ const HomePage = () => {
                 </div>
                 <Link
                     to={"/otherContinent"}
-                    className="text-[#000827] text-center md:text-left"
+                    className="text-[#000827] text-center md:text-left mb-14"
                 >
                     <span className="">Votre région n’est pas encore active </span>
                     <span className=" underline font-bold block md:inline-block">
